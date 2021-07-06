@@ -44,7 +44,18 @@
     ],
     "@typescript-eslint/explicit-module-boundary-types": ["warn", {
       "allowArgumentsExplicitlyTypedAsAny": true
-    }]
+    }],
+    "dot-notation": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "no-plusplus": "off",
+    "no-empty": "off",
+    "no-undef": "off",
+    "no-void": "off",
+    "no-underscore-dangle": "off",
+    "func-names":"off"
   }
 }
 
