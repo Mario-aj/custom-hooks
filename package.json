@@ -9,5 +9,23 @@
   },
   "homepage": "https://github.com/Mario-aj/custom-hooks#readme",
   "license": "MIT",
-  "keywords": ["custom-hooks", "hooks", "react-hooks"]
+  "keywords": [
+    "custom-hooks",
+    "hooks",
+    "react-hooks"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext src/.js,src/.ts",
+    "lint fix": "eslint . --fix --ext src/.js,src/.ts"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2"
+  }
 }
