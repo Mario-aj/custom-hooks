@@ -1,0 +1,13 @@
+{
+  "name": "custom-hooks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Mario-aj/custom-hooks.git",
+  "author": "Mario-alfredo-jorge <mariojorge1997@mail.ru>",
+  "bugs": {
+    "url": "https://github.com/Mario-aj/custom-hooks/issues"
+  },
+  "homepage": "https://github.com/Mario-aj/custom-hooks#readme",
+  "license": "MIT",
+  "keywords": ["custom-hooks", "hooks", "react-hooks"]
+}
