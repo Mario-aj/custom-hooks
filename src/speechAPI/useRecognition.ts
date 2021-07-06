@@ -13,11 +13,10 @@ interface IResultProps {
 const useRecognition = ({
   language,
 }: IRecognitionProps): [IResultProps, SpeechRecognition] => {
-  const [error, setError] = useState('');
-  const [listening, setListening] = useState(false);
-  const [transcript, setTranscript] = useState('');
-
   try {
+    const [error, setError] = useState('');
+    const [listening, setListening] = useState(false);
+    const [transcript, setTranscript] = useState('');
     const { webkitSpeechRecognition } = window as any;
     const SpeechRecognition =
       window.SpeechRecognition || webkitSpeechRecognition;
@@ -40,7 +39,6 @@ const useRecognition = ({
 
     return [{ error, listening, transcript }, recognition];
   } catch (err) {
-    setError(err.message);
     throw new Error(err.message);
   }
 };
