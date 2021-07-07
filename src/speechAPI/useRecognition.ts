@@ -4,7 +4,7 @@ interface IRecognitionProps {
   language: string;
 }
 
-interface IResultProps {
+interface IRecognitionResult {
   error: string;
   listening: boolean;
   transcript: string;
@@ -12,7 +12,7 @@ interface IResultProps {
 
 const useRecognition = ({
   language,
-}: IRecognitionProps): [IResultProps, SpeechRecognition] => {
+}: IRecognitionProps): [IRecognitionResult, SpeechRecognition] => {
   try {
     const [error, setError] = useState('');
     const [listening, setListening] = useState(false);
@@ -28,18 +28,18 @@ const useRecognition = ({
     recognition.onstart = () => setListening(true);
     recognition.onend = () => {
       setListening(false);
-      setTranscript('');
     };
     recognition.onerror = (event) => {
       setListening(false);
       setError(event.message);
     };
-    recognition.onresult = (event) =>
+    recognition.onresult = (event) => {
       setTranscript(event.results[0][0].transcript);
+    };
 
     return [{ error, listening, transcript }, recognition];
-  } catch (err) {
-    throw new Error(err.message);
+  } catch (e) {
+    throw new Error(e.message);
   }
 };
 
