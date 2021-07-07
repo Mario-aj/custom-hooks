@@ -1,20 +1,21 @@
 import { useState } from 'react';
 
 interface IRecognitionProps {
-  language: string;
+  language?: string;
+  continuous?: boolean;
 }
 
 interface IRecognitionResult {
-  error: string;
   listening: boolean;
   transcript: string;
 }
 
 const useRecognition = ({
   language,
+  continuous,
 }: IRecognitionProps): [IRecognitionResult, SpeechRecognition] => {
   try {
-    const [error, setError] = useState('');
+    let strcatResults = '';
     const [listening, setListening] = useState(false);
     const [transcript, setTranscript] = useState('');
     const { webkitSpeechRecognition } = window as any;
@@ -23,21 +24,26 @@ const useRecognition = ({
 
     const recognition = new SpeechRecognition();
 
+    if (!recognition)
+      throw new Error('Your browser does not support speech API');
+
     recognition.lang = language || 'en-US';
+    recognition.continuous = continuous || false;
 
     recognition.onstart = () => setListening(true);
     recognition.onend = () => {
       setListening(false);
     };
     recognition.onerror = (event) => {
-      setListening(false);
-      setError(event.message);
+      throw new Error(event.message);
     };
     recognition.onresult = (event) => {
-      setTranscript(event.results[0][0].transcript);
+      const { resultIndex, results } = event;
+      strcatResults += results[resultIndex][0].transcript;
+      setTranscript(strcatResults);
     };
 
-    return [{ error, listening, transcript }, recognition];
+    return [{ transcript, listening }, recognition];
   } catch (e) {
     throw new Error(e.message);
   }
