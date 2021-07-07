@@ -3,6 +3,7 @@ import { useState } from 'react';
 interface IRecognitionProps {
   language?: string;
   continuous?: boolean;
+  interimResults?: boolean;
 }
 
 interface IRecognitionResult {
@@ -13,9 +14,9 @@ interface IRecognitionResult {
 const useRecognition = ({
   language,
   continuous,
+  interimResults,
 }: IRecognitionProps): [IRecognitionResult, SpeechRecognition] => {
   try {
-    let strcatResults = '';
     const [listening, setListening] = useState(false);
     const [transcript, setTranscript] = useState('');
     const { webkitSpeechRecognition } = window as any;
@@ -29,17 +30,23 @@ const useRecognition = ({
 
     recognition.lang = language || 'en-US';
     recognition.continuous = continuous || false;
+    recognition.interimResults = interimResults || true;
 
     recognition.onstart = () => setListening(true);
     recognition.onend = () => {
       setListening(false);
     };
     recognition.onerror = (event) => {
-      throw new Error(event.message);
+      throw new Error(event.error);
     };
     recognition.onresult = (event) => {
-      const { resultIndex, results } = event;
-      strcatResults += results[resultIndex][0].transcript;
+      const { results } = event;
+
+      const strcatResults = Array.from(results)
+        .map((result) => result[0])
+        .map((result) => result.transcript)
+        .join('');
+
       setTranscript(strcatResults);
     };
 
