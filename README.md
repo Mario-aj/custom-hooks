@@ -52,4 +52,6 @@ Custom-hooks is <a href="https://github.com/Mario-aj/custom-hooks/blob/main/LICE
 
 # ✍🏻 Creator
 
-<a href="https://github.com/Mario-aj">Mario Alfredo Jorge</a>
+<a href="https://github.com/Mario-aj">Mário Alfredo Jorge</a>
+
+<img style="border-radius: 50%;" width="250"  src="https://scontent.flad1-1.fna.fbcdn.net/v/t1.6435-9/75317270_2503820626568282_6938401915864612864_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=174925&_nc_eui2=AeHecLKkCRKB729uaoMVZW36L4QCk4hL-OkvhAKTiEv46Tng9SEDr3hWCbUXMt99svwRLZE-A8hn3WM_p35zBFPd&_nc_ohc=lDdwoB7zr-4AX8qWwxD&_nc_ht=scontent.flad1-1.fna&oh=573f8af87f586c6586a2288b7af2f867&oe=60EBC0A5" alt="creator-picture"/>
