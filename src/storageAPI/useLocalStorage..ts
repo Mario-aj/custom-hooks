@@ -17,7 +17,9 @@ const setItem = ({ storageName, valueToStorage }: ISetItem) => {
   localStorage.setItem(storageName, stringifyValueToStorage);
 };
 
-const useLocalStorage = (storageName: string) => {
+const useLocalStorage = (
+  storageName: string
+): [storageValue: unknown, setLocalStorage: (value: unknown) => void] => {
   const [storagedValue, setStoragedValue] = useState(() =>
     getItem(storageName)
   );
