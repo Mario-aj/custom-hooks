@@ -1,7 +1,7 @@
 {
   "env": {
-      "es2021": true,
-      "node": true
+    "es2021": true,
+    "node": true
   },
   "extends": [
     "airbnb-base",
@@ -10,13 +10,10 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-      "ecmaVersion": 12,
-      "sourceType": "module"
+    "ecmaVersion": 12,
+    "sourceType": "module"
   },
-  "plugins": [
-      "@typescript-eslint",
-      "prettier"
-  ],
+  "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
     "prettier/prettier": "error",
     "camelcase": "off",
@@ -42,9 +39,12 @@
         }
       }
     ],
-    "@typescript-eslint/explicit-module-boundary-types": ["warn", {
-      "allowArgumentsExplicitlyTypedAsAny": true
-    }],
+    "@typescript-eslint/explicit-module-boundary-types": [
+      "warn",
+      {
+        "allowArgumentsExplicitlyTypedAsAny": true
+      }
+    ],
     "dot-notation": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "import/no-unresolved": "off",
@@ -55,7 +55,6 @@
     "no-undef": "off",
     "no-void": "off",
     "no-underscore-dangle": "off",
-    "func-names":"off"
+    "func-names": "off"
   }
 }
-
