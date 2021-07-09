@@ -28,7 +28,7 @@ const useRecognition = ({
     if (!recognition)
       throw new Error('Your browser does not support speech API');
 
-    recognition.lang = language || 'en-US';
+    recognition.lang = language || navigator.language || 'en-US';
     recognition.continuous = continuous || false;
     recognition.interimResults = interimResults || true;
 
