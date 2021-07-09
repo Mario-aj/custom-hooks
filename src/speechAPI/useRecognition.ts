@@ -52,7 +52,7 @@ const useRecognition = ({
 
     return [{ transcript, listening }, recognition];
   } catch (e) {
-    throw new Error(e.message);
+    return e;
   }
 };
 
