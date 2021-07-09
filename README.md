@@ -46,7 +46,7 @@ const App = () => {
 
 We'd love to have your helping hand on <strong>custom-hooks</strong>! See <a href="#">CONTRIBUTING.md</a> for more information on what we're looking for and how to get started.
 
-## <img class="emoji" height="20" width="20"  src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dc.png" alt="licence-icon"/> Licence
+## <img class="emoji" height="20" width="20"  src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dc.png" alt="licence-icon"/> License
 
 Custom-hooks is <a href="https://github.com/Mario-aj/custom-hooks/blob/main/LICENSE" target="blank">MIT licensed</a>.
 
