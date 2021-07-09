@@ -45,7 +45,7 @@
 
 ### Push the changes
 
-1. `git add --all && git commit -m "My message"` (replacing My message with a commit message to stage and commit your changes.
+1. `git add --all && git commit -m "My message"` (replacing My message with a commit message to stage and commit your changes).
 2. `git push origin type/the-name-of-branch` to send your changes to the remote repo.
 3. Go to the `custom-hooks` repo and you should see recently pushed branches.
 4. Follow GitHub's instructions to open your branch.
