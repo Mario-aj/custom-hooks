@@ -17,7 +17,7 @@ const setItem = ({ storageName, valueToStorage }: ISetItem) => {
   localStorage.setItem(storageName, stringifyValueToStorage);
 };
 
-const useLocalStorage = (
+export const useLocalStorage = (
   storageName: string
 ): [storageValue: unknown, setLocalStorage: (value: unknown) => void] => {
   const [storagedValue, setStoragedValue] = useState(() =>
@@ -33,5 +33,3 @@ const useLocalStorage = (
 
   return [storagedValue, setStoragedValue];
 };
-
-export default useLocalStorage;
