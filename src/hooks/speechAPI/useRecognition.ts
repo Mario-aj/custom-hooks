@@ -11,7 +11,7 @@ interface IRecognitionResult {
   transcript: string;
 }
 
-const useRecognition = ({
+export const useRecognition = ({
   language,
   continuous,
   interimResults,
@@ -55,5 +55,3 @@ const useRecognition = ({
     return e;
   }
 };
-
-export default useRecognition;

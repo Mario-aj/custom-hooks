@@ -1,1 +1,1 @@
-export { default as useRecognition } from './useRecognition';
+export { useRecognition } from './useRecognition';
