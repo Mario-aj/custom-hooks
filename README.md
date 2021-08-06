@@ -6,12 +6,7 @@
 <p>Include popular hooks in your React projects easily with <strong>custom-hooks</strong>, with ES6 features that allows you to include only the hooks you want.</p>
 
 ## Installation
-
-```js
-  yarn add custom-hooks
-     #or
-  npm install custom-hooks
-```
+ > Note: This library is still in development, was not published to npm.
 
 ## Usage
 
