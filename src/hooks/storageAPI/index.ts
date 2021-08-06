@@ -5,6 +5,11 @@ interface ISetItem {
   storageName: string;
 }
 
+interface IStorageAPIProps {
+  storagedValue: unknown;
+  setStoragedValue: (value: unknown) => void;
+}
+
 const getItem = (storageName: string) => {
   const items = localStorage.getItem(storageName);
 
@@ -17,9 +22,7 @@ const setItem = ({ storageName, valueToStorage }: ISetItem) => {
   localStorage.setItem(storageName, stringifyValueToStorage);
 };
 
-export const useLocalStorage = (
-  storageName: string
-): [storageValue: unknown, setLocalStorage: (value: unknown) => void] => {
+export const useLocalStorage = (storageName: string): IStorageAPIProps => {
   const [storagedValue, setStoragedValue] = useState(() =>
     getItem(storageName)
   );
@@ -31,5 +34,5 @@ export const useLocalStorage = (
     });
   }, [storagedValue, storageName]);
 
-  return [storagedValue, setStoragedValue];
+  return { storagedValue, setStoragedValue };
 };
