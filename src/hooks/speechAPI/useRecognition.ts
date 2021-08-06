@@ -9,13 +9,14 @@ interface IRecognitionProps {
 interface IRecognitionResult {
   listening: boolean;
   transcript: string;
+  recognition: SpeechRecognition;
 }
 
 export const useRecognition = ({
   language,
   continuous,
   interimResults,
-}: IRecognitionProps): [IRecognitionResult, SpeechRecognition] => {
+}: IRecognitionProps): IRecognitionResult => {
   try {
     const [listening, setListening] = useState(false);
     const [transcript, setTranscript] = useState('');
@@ -50,7 +51,7 @@ export const useRecognition = ({
       setTranscript(strcatResults);
     };
 
-    return [{ transcript, listening }, recognition];
+    return { transcript, listening, recognition };
   } catch (e) {
     return e;
   }
